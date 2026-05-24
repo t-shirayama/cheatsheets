@@ -125,7 +125,7 @@ namesById.put(1L, "Alice");
 
 ## Stream
 
-Stream はコレクションの絞り込みや変換を連続して書けます。
+Stream はコレクションの絞り込みや変換を連続して書けます。`.toList()` は Java 16 以降で使え、返る `List` は変更不可です。
 
 ```java
 import java.util.List;
@@ -137,6 +137,21 @@ List<String> filtered = names.stream()
     .filter(name -> name.startsWith("A"))
     .map(String::toUpperCase)
     .toList();
+```
+
+Java 16 未満、または変更可能な `List` が必要な場合は `Collectors.toList()` を使います。
+
+```java
+import java.util.List;
+import java.util.stream.Collectors;
+
+List<String> names = List.of("Alice", "Bob", "Carol");
+
+List<String> filtered = names.stream()
+    // Java 11 互換の書き方です。
+    .filter(name -> name.startsWith("A"))
+    .map(String::toUpperCase)
+    .collect(Collectors.toList());
 ```
 
 ## Optional

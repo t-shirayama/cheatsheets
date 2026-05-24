@@ -201,15 +201,15 @@ VALUES (1, 'alice@example.com', 'Alice Replaced', 'active');
 
 ## INSERT ... ON DUPLICATE KEY UPDATE
 
-主キーまたはユニークキーが重複したときに、既存行を更新します。UPSERT としてよく使います。
+主キーまたはユニークキーが重複したときに、既存行を更新します。UPSERT としてよく使います。MySQL 8.4 では `ON DUPLICATE KEY UPDATE` 内の `VALUES()` が非推奨のため、行エイリアスを使います。
 
 ```sql
 -- email が重複しなければ追加し、重複したら名前と状態を更新します。
 INSERT INTO users (email, name, status)
-VALUES ('alice@example.com', 'Alice', 'active')
+VALUES ('alice@example.com', 'Alice', 'active') AS new
 ON DUPLICATE KEY UPDATE
-  name = VALUES(name),
-  status = VALUES(status),
+  name = new.name,
+  status = new.status,
   updated_at = CURRENT_TIMESTAMP;
 ```
 

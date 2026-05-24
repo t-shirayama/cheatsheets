@@ -179,7 +179,7 @@ if ($databaseUrl === false) {
 
 - 新規ファイルでは `declare(strict_types=1);` を検討します。
 - SQL は文字列結合せず、PDO のプリペアドステートメントを使います。
-- HTML 出力では `htmlspecialchars($value, ENT_QUOTES, 'UTF-8')` を使います。
+- HTML 出力では `htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')` を使います。
 - 依存関係は Composer で管理し、`vendor/` の扱いはプロジェクト方針に合わせます。
 
 ## 参考
