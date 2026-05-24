@@ -4,6 +4,18 @@
 
 MySQL でよく使う DDL、DML、検索条件、JOIN、集計、関数、トランザクション、確認コマンドの早見表です。例では `users`、`orders`、`accounts` などのテーブルを使います。
 
+## このページで扱う範囲
+
+- SQL の基本操作とよく使う構文
+- 実務で確認頻度が高いクエリの最小例
+- データ削除、ロック、トランザクションの初歩的な注意点
+
+## 扱わない範囲
+
+- 詳細なパフォーマンスチューニング
+- レプリケーション、パーティショニング、運用監視の詳細
+- MySQL バージョン別の細かい差分
+
 ## 接続
 
 MySQL クライアントからローカルまたは指定ホストのデータベースへ接続します。
@@ -81,6 +93,9 @@ ALTER TABLE users DROP COLUMN last_login_at;
 
 テーブルを削除します。データも定義も消えるため、実行前にバックアップと対象確認が必要です。
 
+> [!WARNING]
+> この操作はテーブル定義とデータを削除します。実行前に対象とバックアップを確認してください。
+
 ```sql
 -- old_users テーブルが存在する場合だけ削除します。
 DROP TABLE IF EXISTS old_users;
@@ -112,6 +127,9 @@ WHERE status = 'active';
 ## TRUNCATE
 
 テーブルの全データを高速に削除します。`DELETE` と違い、全件削除専用で AUTO_INCREMENT もリセットされます。DDL 扱いなので暗黙コミットに注意します。
+
+> [!WARNING]
+> この操作はテーブル内の全データを削除します。実行前に対象とバックアップを確認してください。
 
 ```sql
 -- 一時取り込み用テーブルの全データを削除し、採番もリセットします。
@@ -168,6 +186,9 @@ WHERE status = 'inactive';
 ## REPLACE
 
 主キーまたはユニークキーが重複した場合、既存行を削除してから挿入します。関連する外部キーやトリガーがある場合は副作用に注意します。
+
+> [!WARNING]
+> `REPLACE` は内部的に既存行を削除してから挿入する場合があります。外部キー、トリガー、採番への影響を確認してください。
 
 ```sql
 -- id または email が重複した場合、既存行を削除してから挿入します。
@@ -635,6 +656,9 @@ COMMIT;
 
 明示的にテーブルをロックします。暗黙コミットが発生するため、トランザクション中の利用は注意します。使い終わったら必ず `UNLOCK TABLES` します。
 
+> [!WARNING]
+> ロック中は他の処理を待たせる可能性があります。対象テーブルと解除手順を確認してから実行してください。
+
 ```sql
 -- users テーブルを書き込みロックします。
 LOCK TABLES users WRITE;
@@ -684,6 +708,7 @@ mysql -u root -p app_db < app_db.sql
 - 外部入力は文字列結合せず、プレースホルダー付きのプリペアドステートメントを使います。
 - CTE と WINDOW 関数は MySQL 8.0 以降を前提にします。
 
-## 参考リンク
+## 参考
 
-- [MySQL Reference Manual](https://dev.mysql.com/doc/refman/en/)
+- 公式ドキュメント: [MySQL Reference Manual](https://dev.mysql.com/doc/refman/en/)
+- 関連: [SQL Statements](https://dev.mysql.com/doc/refman/en/sql-statements.html)

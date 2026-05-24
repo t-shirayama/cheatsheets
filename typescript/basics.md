@@ -4,6 +4,18 @@
 
 JavaScript に静的型を追加する TypeScript の基本構文です。
 
+## このページで扱う範囲
+
+- TypeScript の基本型と型定義
+- Union、Generics、Utility Types の最小例
+- strict 前提の初歩的な注意点
+
+## 扱わない範囲
+
+- 高度な型レベルプログラミング
+- フレームワーク固有の型設計
+- バージョン別の細かいコンパイラ挙動
+
 ## 基本型
 
 値に型を付けることで、代入ミスや呼び出しミスを早めに検出できます。
@@ -178,6 +190,7 @@ async function fetchUser(id: number): Promise<User> {
 - `as` による型アサーションは実行時チェックではありません。
 - API レスポンスは TypeScript 型だけで安全にならないため、必要に応じてバリデーションします。
 
-## 参考リンク
+## 参考
 
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+- 公式ドキュメント: [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+- 関連: [TSConfig Reference](https://www.typescriptlang.org/tsconfig/)

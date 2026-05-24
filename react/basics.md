@@ -4,6 +4,18 @@
 
 React と TypeScript を組み合わせるときの、コンポーネント、Props、State、Hooks の基本構文です。
 
+## このページで扱う範囲
+
+- React コンポーネントと Props の基本
+- TypeScript/TSX で書く Hooks の最小例
+- フォーム、リスト、条件付き表示、メモ化の初歩
+
+## 扱わない範囲
+
+- ルーティング、状態管理ライブラリ、フレームワーク固有の設定
+- 詳細なパフォーマンスチューニング
+- テスト、SSR、Server Components の詳細
+
 ## コンポーネント
 
 Props の型を先に定義し、コンポーネントの引数に適用します。
@@ -263,6 +275,7 @@ function UserCount({ users }: UserCountProps) {
 - `useEffect` は外部システムとの同期に使い、計算だけならレンダー中か `useMemo` を検討します。
 - 入力、ボタン、エラー表示にはアクセシビリティ属性を意識します。
 
-## 参考リンク
+## 参考
 
-- [React Documentation](https://react.dev/)
+- 公式ドキュメント: [React Documentation](https://react.dev/)
+- 関連: [Using TypeScript](https://react.dev/learn/typescript)

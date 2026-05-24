@@ -4,6 +4,18 @@
 
 PHP の基本構文、Composer、PDO、実行方法の早見表です。
 
+## このページで扱う範囲
+
+- PHP の基本構文、配列、関数、クラス
+- Composer、PDO、JSON、HTML エスケープの最小例
+- 初歩的なセキュリティ注意点
+
+## 扱わない範囲
+
+- Laravel などのフレームワーク固有の書き方
+- Web サーバーや PHP-FPM の詳細設定
+- バージョン別の細かい互換性
+
 ## 実行と Composer
 
 PHP の実行、簡易サーバー起動、Composer による依存管理の基本コマンドです。
@@ -170,7 +182,7 @@ if ($databaseUrl === false) {
 - HTML 出力では `htmlspecialchars($value, ENT_QUOTES, 'UTF-8')` を使います。
 - 依存関係は Composer で管理し、`vendor/` の扱いはプロジェクト方針に合わせます。
 
-## 参考リンク
+## 参考
 
-- [PHP Manual](https://www.php.net/manual/en/)
-- [Composer Documentation](https://getcomposer.org/doc/)
+- 公式ドキュメント: [PHP Manual](https://www.php.net/manual/en/)
+- 関連: [Composer Documentation](https://getcomposer.org/doc/)

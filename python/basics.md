@@ -4,6 +4,18 @@
 
 Python の仮想環境、基本構文、ファイル操作、テストの早見表です。
 
+## このページで扱う範囲
+
+- Python の基本構文と組み込みコレクション
+- 仮想環境、ファイル操作、JSON、pytest の最小例
+- 初歩的な型ヒントと例外処理
+
+## 扱わない範囲
+
+- Web フレームワークやデータ分析ライブラリ固有の使い方
+- パッケージ公開や CI 設定の詳細
+- パフォーマンスチューニングや C 拡張
+
 ## 仮想環境
 
 プロジェクトごとに仮想環境を作り、依存関係を分離します。
@@ -182,6 +194,7 @@ python -m pytest
 - 文字コードは明示しておくと環境差分を減らせます。
 - 秘密情報はコードに直書きせず、環境変数やシークレット管理を使います。
 
-## 参考リンク
+## 参考
 
-- [Python Documentation](https://docs.python.org/3/)
+- 公式ドキュメント: [Python Documentation](https://docs.python.org/3/)
+- 関連: [Python Tutorial](https://docs.python.org/3/tutorial/)

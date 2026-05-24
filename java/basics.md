@@ -4,6 +4,18 @@
 
 Java のコンパイル、基本構文、コレクション、Stream、例外処理の早見表です。
 
+## このページで扱う範囲
+
+- Java の基本構文、クラス、record
+- コレクション、Stream、Optional、例外処理の最小例
+- Maven と Gradle の基本コマンド
+
+## 扱わない範囲
+
+- Spring などのフレームワーク固有の書き方
+- JVM チューニングや並行処理の詳細
+- Java バージョン別の細かい差分
+
 ## コンパイルと実行
 
 `javac` で `.java` ファイルをコンパイルし、生成されたクラスを `java` で実行します。
@@ -203,6 +215,7 @@ mvn package
 - `Optional` をフィールドや引数に多用せず、戻り値での不在表現を中心に使います。
 - Java の機能はバージョン差があるため、プロジェクトの LTS バージョンを確認します。
 
-## 参考リンク
+## 参考
 
-- [Java Documentation](https://docs.oracle.com/en/java/)
+- 公式ドキュメント: [Java Documentation](https://docs.oracle.com/en/java/)
+- 関連: [dev.java Learn](https://dev.java/learn/)

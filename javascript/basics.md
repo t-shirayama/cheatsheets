@@ -4,6 +4,18 @@
 
 ブラウザと Node.js の両方でよく使う JavaScript の基本構文です。
 
+## このページで扱う範囲
+
+- JavaScript の基本構文
+- ブラウザと Node.js の両方でよく使う最小例
+- 初歩的な非同期処理、モジュール、npm コマンド
+
+## 扱わない範囲
+
+- フレームワーク固有の書き方
+- ビルドツールやトランスパイラの詳細設定
+- パフォーマンスチューニングやブラウザ互換性の細かい差分
+
 ## 変数と値
 
 再代入の有無に応じて `const` と `let` を使い分けます。
@@ -187,6 +199,7 @@ npm test
 - 日付やタイムゾーンの処理は標準 `Date` だけで完結しない場合があります。
 - 外部入力を HTML に入れる場合は XSS に注意します。
 
-## 参考リンク
+## 参考
 
-- [MDN JavaScript Guide](https://developer.mozilla.org/docs/Web/JavaScript/Guide)
+- 公式ドキュメント: [ECMAScript Language Specification](https://tc39.es/ecma262/)
+- 関連: [MDN JavaScript Guide](https://developer.mozilla.org/docs/Web/JavaScript/Guide)
