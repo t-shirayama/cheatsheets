@@ -39,8 +39,8 @@
 - `shell/`: Bash, PowerShell, CLI 操作
 - `docker/`: Docker, Docker Compose, コンテナ運用
 - `mysql/`: MySQL, SQL, スキーマ設計、クエリ確認
-- `javascript/`: JavaScript, TypeScript, Node.js
-- `typescript/`: TypeScript, 型定義、tsconfig
+- `javascript/`: JavaScript の基本構文、ブラウザ API、Node.js の基本操作
+- `typescript/`: TypeScript の型定義、型システム、tsconfig、型安全な実装パターン
 - `python/`: Python, pip, venv, pytest
 - `php/`: PHP, Composer, PDO
 - `react/`: React, TypeScript, TSX, Hooks
